@@ -1,0 +1,10 @@
+CREATE TABLE url (
+    id_url INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    code VARCHAR(100) UNIQUE NOT NULL,
+    original_url TEXT,
+    clicks INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX code_index
+ON url (code);
